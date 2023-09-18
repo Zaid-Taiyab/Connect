@@ -136,7 +136,7 @@ int checkVerticalWin(char grid[ROWS][COLUMNS], char player, int tokensToWin) {
             }
         }
     }
-    return 0; // No vertical win
+    return 0; 
 }
 
 int checkDiagonalWin(char grid[ROWS][COLUMNS], char player, int tokensToWin) {
