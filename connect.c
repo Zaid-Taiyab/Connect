@@ -24,11 +24,11 @@ int main(){
         int totalMoves = 0;
 
         for (int move = 1; move <= ROWS * COLUMNS; move++) {
-            printf("Player %c, pick a column: \n", currentPlayer);
+            printf("Player %c, pick a column (1-7): \n", currentPlayer);
             scanf("%d", &column);
 
-            if (column >= 0 && column < COLUMNS) {
-                makeMove(grid, column, currentPlayer);
+            if (column-1 >=0  && column-1 < COLUMNS) {
+                makeMove(grid, column-1, currentPlayer);
                 printGrid(grid);
 
                 int x = checkVerticalWin(grid, currentPlayer, token);
@@ -49,7 +49,7 @@ int main(){
 
                 currentPlayer = (currentPlayer == 'R') ? 'Y' : 'R';
             } else {
-                printf("Invalid column. Please enter a valid column (0-6).\n");
+                printf("Invalid column. Please enter a valid column (1-7).\n");
             }
         }
 
@@ -69,7 +69,7 @@ int main(){
 void printGrid(char grid[ROWS][COLUMNS]) {
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLUMNS; j++) {
-                printf("| %c ", grid[i][j]);
+            printf("| %c ", grid[i][j]);
         }
         printf("|\n");
     }
@@ -77,10 +77,10 @@ void printGrid(char grid[ROWS][COLUMNS]) {
 }
 
 int TokenNumber(){
-   int token;
-   printf("Enter the tokens needed for a win: \n");
-   scanf("%d",&token);
-   return token;
+    int token;
+    printf("Enter the tokens needed for a win: \n");
+    scanf("%d",&token);
+    return token;
 }
 
 void initializeGrid(char grid[ROWS][COLUMNS]){
@@ -136,7 +136,7 @@ int checkVerticalWin(char grid[ROWS][COLUMNS], char player, int tokensToWin) {
             }
         }
     }
-    return 0; 
+    return 0;
 }
 
 int checkDiagonalWin(char grid[ROWS][COLUMNS], char player, int tokensToWin) {
