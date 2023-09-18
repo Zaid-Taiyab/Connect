@@ -73,6 +73,7 @@ void printGrid(char grid[ROWS][COLUMNS]) {
         }
         printf("|\n");
     }
+    printf("-----------------------------");
     printf("\n");
 }
 
