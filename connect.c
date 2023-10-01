@@ -226,7 +226,7 @@ void replayGame(struct Node* moveHistory) {
         makeMove(replayGrid, column, player);
         printGrid(replayGrid);
 
-        usleep(1000000); // Sleep for 1000000 microseconds
+        usleep(1000000);
 
         current = current->next;
     }
